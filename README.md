@@ -1,5 +1,13 @@
 # Getting started with using LLMs as endpoints
 
+Different modalities 
+*"Unstructured to structured + validate"*
+*"Review image and talk about it"*
+*"Streaming example"*
+*"Extract text and feed into prompt"*
+
+
+
 Starter kit to showscase how to use free tier github models
 ```
 starter_kit.py # text, image, and multimodality usecase 
