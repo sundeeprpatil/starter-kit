@@ -15,7 +15,7 @@ c = OpenAI(
 
 ## Image use case 
 import base64
-with open('/Users/ramkrsna/projects/random_test/data/sample_img.png', "rb") as f :
+with open('./data/sample_img.png', "rb") as f :
     image_data = f.read()
 img_data  = base64.b64encode(image_data).decode()
 messages  = [{"role":"user", "content": [{"type": "text", "text": "describe the image"},
@@ -24,7 +24,7 @@ messages  = [{"role":"user", "content": [{"type": "text", "text": "describe the 
 
 # PDF use case
 import fitz 
-pdf_path = r'/Users/ramkrsna/projects/random_test/data/download.pdf'
+pdf_path = r'./data/download.pdf'
 
 f = fitz.open(pdf_path) 
 text_content = '\n --PAGE BREAK-- \n'.join([ff.get_text() for ff in f ])
