@@ -48,6 +48,17 @@ img_data = base64.b64encode(f.read()).decode("utf-8")
    {"type":"text", "text" : "<instruction for the task>"}, 
    {"type":"image_url","image_url":{"url":"data:<image_type>;base64,<img_data>"} } 
 ]}
-
-
 ```
+
+# Summary 
+
+
+|Key| Exactly| Why |
+|------|-------|----|
+|"role"|"system","user", "assistant"| API rejects anything else|
+|"content"| string or list of content blocks/ typed blocks | only these 2 shape |
+|"type"| "text" or "image_url"| discriminator for block type|
+|"text"| inside text block :) |  do not call it  "prompt" or "message"|
+|"image_url"|  both as type and nested key | Required | 
+|"url"| within image_url object| actual data URL or HTTP URL : "data:/image/png;base,{img_data}"|
+
