@@ -33,3 +33,21 @@ curl -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/user
 curl -L   -H "Accept: application/vnd.github+json"   -H "Authorization: Bearer $GITHUB_TOKEN"   -H "X-GitHub-Api-Version: 2026-03-10"   https://models.github.ai/catalog/models
 
 ```
+
+
+```
+# TEXT only 
+{"role": "user" , "content" : "...my text ..."}
+
+# LLM likes string : binary -> ascii byte -> ascii
+
+img_data = base64.b64encode(f.read()).decode("utf-8") 
+
+# content will be list of typed blocks
+{"role" : "user", "content": [
+   {"type":"text", "text" : "<instruction for the task>"}, 
+   {"type":"image_url","image_url":{"url":"data:<image_type>;base64,<img_data>"} } 
+]}
+
+
+```
